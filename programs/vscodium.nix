@@ -12,6 +12,7 @@
         "workbench.iconTheme" = "material-icon-theme";
         "window.titleBarStyle" = "custom";
         "git.autofetch" = true;
+        "git.confirmSync" = false;
       };
       extensions = with pkgs.vscode-extensions; [
         pkief.material-icon-theme
