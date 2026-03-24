@@ -19,6 +19,7 @@
           "spotify.desktop"
           "org.gnome.Console.desktop"
           "steam.desktop"
+          "com.heroicgameslauncher.hgl.desktop"
         ];
         enabled-extensions = with pkgs.gnomeExtensions; [
           dash-to-dock.extensionUuid
@@ -26,7 +27,7 @@
           accent-directories.extensionUuid
           dynamic-music-pill.extensionUuid
         ];
-        last-selected-power-profile = "performance";
+        last-selected-power-profile = "balanced";
       };
 
       "org/gnome/shell/extensions/dash-to-dock" = {
