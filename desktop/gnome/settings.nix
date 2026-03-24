@@ -29,9 +29,9 @@
         last-selected-power-profile = "performance";
       };
 
-      "org/gnome/shell/extensions/dash-to-doc" = {
-        show-apps-at-top = true;
+      "org/gnome/shell/extensions/dash-to-dock" = {
         show-mounts-network = true;
+        apply-custom-theme = true;
       };
 
       "org/gnome/shell/extensions/dynamic-music-pill" = {
