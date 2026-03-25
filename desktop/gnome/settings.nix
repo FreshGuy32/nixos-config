@@ -20,6 +20,7 @@
           "org.gnome.Console.desktop"
           "steam.desktop"
           "com.heroicgameslauncher.hgl.desktop"
+          "codium.desktop"
         ];
         enabled-extensions = with pkgs.gnomeExtensions; [
           dash-to-dock.extensionUuid
