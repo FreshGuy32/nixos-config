@@ -81,6 +81,15 @@
     ];
   };
 
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-calendar
+    gnome-contacts
+    gnome-maps
+    gnome-music
+    gnome-text-editor
+    gnome-tour
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [
