@@ -17,6 +17,7 @@
     ../../programs/git.nix
     ../../programs/nh.nix
     ../../programs/starship.nix
+    ../../programs/thunderbird.nix
     ../../programs/vscodium.nix
   ];
 
