@@ -19,7 +19,7 @@
       ];
     };
 
-    profiles."CS" = {
+    profiles."C#" = {
       extensions = with pkgs.vscode-extensions; [
         eamodio.gitlens
         ms-vscode-remote.remote-containers

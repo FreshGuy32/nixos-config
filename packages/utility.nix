@@ -4,6 +4,5 @@
   home.packages = with pkgs; [
     gnome-boxes
     switcheroo
-    solaar
   ];
 }
