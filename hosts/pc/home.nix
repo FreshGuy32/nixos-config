@@ -1,7 +1,9 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   imports = [
+    inputs.quick-web-apps.homeManagerModules.default
+
     ../../desktop/gnome/settings.nix
     ../../desktop/gnome/theme.nix
 
@@ -19,6 +21,7 @@
     ../../programs/starship.nix
     ../../programs/thunderbird.nix
     ../../programs/vscodium.nix
+    ../../programs/web-apps.nix
   ];
 
   home.username = "mathias";
