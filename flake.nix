@@ -1,55 +1,26 @@
+# DO-NOT-EDIT. This file was auto-generated using github:vic/flake-file.
+# Use `nix run .#write-flake` to regenerate it.
 {
-  description = "";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs-lib.follows = "nixpkgs";
+
+    den.url = "github:denful/den";
+
+    flake-file.url = "github:vic/flake-file";
+
+    flake-parts = {
+      inputs.nixpkgs-lib.follows = "nixpkgs-lib";
+      url = "github:hercules-ci/flake-parts";
+    };
 
     home-manager = {
-      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager";
     };
 
-    solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    quick-web-apps = {
-      url = "github:olafkfreund/gnome-quick-web-apps";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    import-tree.url = "github:vic/import-tree";
   };
 
-  outputs =
-    inputs@{
-      nixpkgs,
-      home-manager,
-      solaar,
-      ...
-    }:
-    {
-      nixosConfigurations = {
-        pc = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-
-          modules = [
-            ./hosts/pc/configuration.nix
-
-            home-manager.nixosModules.default
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-
-              home-manager.extraSpecialArgs = { inherit inputs; };
-
-
-              home-manager.users.mathias = import ./hosts/pc/home.nix;
-
-            }
-
-            solaar.nixosModules.default
-          ];
-        };
-      };
-    };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }
